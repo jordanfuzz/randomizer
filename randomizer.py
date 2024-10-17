@@ -88,7 +88,7 @@ def replace_words(word_combination):
 def get_random_word_from_list(json_file):
     script_dir = os.path.dirname(__file__)
     file_path = os.path.join(script_dir, json_file)
-    with open(file_path, "r") as file:
+    with open(file_path, "r", encoding="utf-8") as file:
         words = json.load(file)
     return random.choice(words)
 
