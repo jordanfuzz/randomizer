@@ -1,6 +1,8 @@
 import random
 import json
 import os
+import string
+import argparse
 
 list_by_word_type = {
     "verb": "lists/words/verb.json",
@@ -42,11 +44,12 @@ def rand(end):
 def get_base_word():
     roll = rand(3)
     if roll == 0:
-        return get_random_word_from_list(
+        existing_word = get_random_word_from_list(
             random.choice(
                 ["lists/special/list_o_words.json", "lists/special/cat_names.json"]
             )
         )
+        return existing_word
     else:
         return generate_word()
 
@@ -93,9 +96,37 @@ def get_random_word_from_list(json_file):
     return random.choice(words)
 
 
+def swap_letters(word):
+    if not word:
+        return word
+    if word.lower() in ["a", "i", "the", "of", "and", "or", "to", "in", "on"]:
+        return word
+    random_letter = random.choice(string.ascii_lowercase)
+    return random_letter + word[1:]
+
+
+def swap_letters_in_string(sentence):
+    words = sentence.split()
+    swapped_words = [swap_letters(word) for word in words]
+    return " ".join(swapped_words)
+
+
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "-s",
+        "--swap",
+        help="Swap the first letter of each word with a random letter",
+        action="store_true",
+    )
+
+    args = parser.parse_args()
+
     base_word = get_base_word()
-    print(base_word.title())
+    if args.swap:
+        print(swap_letters_in_string(base_word).title())
+    else:
+        print(base_word.title())
 
 
 if __name__ == "__main__":
