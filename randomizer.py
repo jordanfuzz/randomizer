@@ -120,11 +120,25 @@ def main():
         action="store_true",
     )
 
+    parser.add_argument(
+        "-c",
+        "--compound",
+        help="Generate a compound word",
+        action="store_true",
+    )
+
     args = parser.parse_args()
 
     base_word = get_base_word()
     if args.swap:
         print(swap_letters_in_string(base_word).title())
+    elif args.compound:
+        print(
+            (
+                get_random_word_from_list("lists/words/noun.json")
+                + get_random_word_from_list("lists/words/noun.json")
+            ).title()
+        )
     else:
         print(base_word.title())
 
