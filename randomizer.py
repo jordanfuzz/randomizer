@@ -15,6 +15,8 @@ list_by_word_type = {
     "first_name": "lists/names/first_name.json",
     "last_name": "lists/names/last_name.json",
     "all_nouns": "lists/words/all_nouns.json",
+    "spooky_noun": "lists/words/spooky_noun.json",
+    "spooky_adjective": "lists/words/spooky_adjective.json",
 }
 
 word_combinations = [
@@ -36,13 +38,26 @@ word_combinations = [
     "The [noun] [verber]",
 ]
 
+spooky_combinations = [
+    "[adjective] [spooky_noun]",
+    "[spooky_noun]",
+    "[spooky_noun] [spooky_noun]",
+    "[spooky_noun] [verber]",
+    "The [adjective] [spooky_noun]",
+    "[spooky_adjective] [spooky_noun]",
+    "[spooky_adjective] [noun]",
+    "[noun]bane",
+    "[noun]blood",
+    "[noun]bone",
+]
+
 
 def rand(end):
     return random.randint(0, end - 1)
 
 
 def get_base_word():
-    roll = rand(3)
+    roll = rand(4)
     if roll == 0:
         existing_word = get_random_word_from_list(
             random.choice(
@@ -50,12 +65,21 @@ def get_base_word():
             )
         )
         return existing_word
+    elif roll == 1:
+        return generate_word(is_spooky=True)
     else:
-        return generate_word()
+        return generate_word(is_spooky=False)
 
 
-def generate_word():
-    word_combination = random.choice(word_combinations)
+def get_spooky_word():
+    return generate_word(is_spooky=True)
+
+
+def generate_word(is_spooky=False):
+    if is_spooky:
+        word_combination = random.choice(spooky_combinations)
+    else:
+        word_combination = random.choice(word_combinations)
     return replace_words(word_combination)
 
 
@@ -121,6 +145,13 @@ def main():
     )
 
     parser.add_argument(
+        "-S",
+        "--spooky",
+        help="Generate a spooky word",
+        action="store_true",
+    )
+
+    parser.add_argument(
         "-c",
         "--compound",
         help="Generate a compound word",
@@ -134,6 +165,8 @@ def main():
             get_random_word_from_list("lists/words/noun.json")
             + get_random_word_from_list("lists/words/noun.json")
         ).title()
+    elif args.spooky:
+        base_word = get_spooky_word()
     else:
         base_word = get_base_word()
 
