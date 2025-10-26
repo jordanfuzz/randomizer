@@ -174,6 +174,9 @@ def main():
         print(swap_letters_in_string(base_word).title())
     else:
         print(base_word.title())
+    # print("Find an easter egg in Marble Blast Ultra (Xbox 360)")
+    # print("Make a film starring Plankton in Nickelodeon Toon Twister")
+    # print("Unlock the Evil Gnome costume in Amped 3")
 
 
 if __name__ == "__main__":
