@@ -54,7 +54,7 @@ def _get_word(word_list, words=[], bad_match_list=[], allow_similar_matches=Fals
     return (words, bad_match_list)
 
 
-def generate_game_name(allow_similar_matches=False):
+def generate_game_name(pooh_bear_mode=False, allow_similar_matches=False):
     words = []
     bad_match_list = []
     for word_list in _word_list:
@@ -64,6 +64,8 @@ def generate_game_name(allow_similar_matches=False):
             bad_match_list=bad_match_list,
             allow_similar_matches=allow_similar_matches,
         )
+    replace_index = trunc(floor(random.random() * 2))
+    words[replace_index] = "Tigger"
 
     return " ".join(words)
 
@@ -74,9 +76,12 @@ if __name__ == "__main__":
     parser.add_argument(
         "-l", "--list", action="store", help="Word list to use for generating names."
     )
+    parser.add_argument(
+        "-p", "--pooh", action="store_true", help="Activate Pooh Bear Mode."
+    )
 
     args = parser.parse_args()
 
     _build_list(word_list=args.list if args.list else _word_list_file)
     for i in range(args.count if args.count else 1):
-        print(generate_game_name())
+        print(generate_game_name(pooh_bear_mode=args.pooh))
