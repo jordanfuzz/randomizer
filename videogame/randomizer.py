@@ -64,8 +64,9 @@ def generate_game_name(pooh_bear_mode=False, allow_similar_matches=False):
             bad_match_list=bad_match_list,
             allow_similar_matches=allow_similar_matches,
         )
-    replace_index = trunc(floor(random.random() * 2))
-    words[replace_index] = "Tigger"
+    if pooh_bear_mode:
+        replace_index = trunc(floor(random.random() * 2))
+        words[replace_index] = "Tigger"
 
     return " ".join(words)
 
