@@ -61,7 +61,6 @@ function replaceWords(wordCombination, data) {
             if (roll !== 0) {
                 word = pick(data[LISTS.generic.noun])
             } else {
-                console.log('GOT HERE!!!')
                 word = pick(data[LISTS.generic.allNoun])
             }
         } else if (listByWordType[wordType]) {

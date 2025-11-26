@@ -1,6 +1,7 @@
 import { LISTS } from './lists.js'
 import generateVideoGameTitle from './generators/videogame.js'
 import generateOsrsCatName from './generators/cats.js'
+import generateMasonicTitle from './generators/masonic.js'
 
 const GENERATORS = {
     videogame: {
@@ -27,7 +28,7 @@ const GENERATORS = {
         generate: generateOsrsCatName,
     },
     masonic: {
-        title: 'Masonic Name Generator',
+        title: 'Masonic Title Generator',
         files: [
             LISTS.masonic.adjective,
             LISTS.masonic.noun,
@@ -40,7 +41,7 @@ const GENERATORS = {
             LISTS.names.firstName,
             LISTS.names.lastName,
         ],
-        generate: (data) => {},
+        generate: generateMasonicTitle,
     },
     floridaman: {
         title: 'Florida Man Headline Generator',
