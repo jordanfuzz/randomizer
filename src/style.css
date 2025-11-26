@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 body {
-    font-family: sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background: #01161e;
+    color: #2978a0;
+    text-align: center;
 }
 
 .generator-card {
@@ -31,6 +36,46 @@ button {
     padding: 10px 20px;
     margin-top: 10px;
     cursor: pointer;
+    background-color: #2978a0;
+    color: #7cd3ff;
+    border: 2px solid #7cd3ff;
+    border-radius: 2px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.button-label {
+    margin-top: 40vh;
+    font-size: 1rem;
+    color: #2978a0;
+}
+
+.buttons {
+    margin-top: 15px;
+    opacity: 0.8;
+}
+
+.videogame {
+    font-size: 2.5rem;
+}
+
+.floridaman {
+    font-size: 1.5rem;
+}
+
+.cats {
+    font-size: 2.5rem;
+}
+
+.masonic {
+    font-size: 2rem;
+}
+
+#result {
+    margin-top: 30vh;
+    color: #7cd3ff;
 }
 
 .loading {

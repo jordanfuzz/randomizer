@@ -87,6 +87,17 @@ function handleRouting() {
 window.addEventListener('popstate', handleRouting)
 document.addEventListener('DOMContentLoaded', handleRouting)
 
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        const button = document.getElementById('gen-button')
+
+        if (button && !button.disabled) {
+            e.preventDefault()
+            button.click()
+        }
+    }
+})
+
 function navigateTo(key) {
     history.pushState(null, null, `/${key}`)
     handleRouting()
@@ -103,12 +114,12 @@ function renderMenu() {
 
     const list = document.getElementById('menu-list')
     for (const key of Object.keys(GENERATORS)) {
-        const btn = document.createElement('button')
-        btn.innerText = GENERATORS[key].title
-        btn.onclick = () => navigateTo(key)
-        btn.style.display = 'block'
-        btn.style.margin = '10px 0'
-        list.appendChild(btn)
+        const button = document.createElement('button')
+        button.innerText = GENERATORS[key].title
+        button.onclick = () => navigateTo(key)
+        button.style.display = 'block'
+        button.style.margin = '20px auto'
+        list.appendChild(button)
     }
 }
 
@@ -116,9 +127,9 @@ async function loadGenerator(key) {
     const app = document.getElementById('app')
     const generator = GENERATORS[key]
 
-    app.innerHTML = `<h2>${generator.title}</h2><div id="result">Loading...</div><button id="gen-btn" disabled>Generate</button> <button id="back-btn">Back</button>`
+    app.innerHTML = `<h2>${generator.title}</h2><div id="result">Loading...</div><div class="button-label">Press 'Enter' to generate</div><div class="buttons"><button id="gen-button" disabled>Generate</button> <button id="back-button">Back</button></div>`
 
-    document.getElementById('back-btn').onclick = navigateHome
+    document.getElementById('back-button').onclick = navigateHome
 
     try {
         await Promise.all(
@@ -135,14 +146,15 @@ async function loadGenerator(key) {
             })
         )
 
-        const btn = document.getElementById('gen-btn')
-        btn.disabled = false
-        btn.onclick = () => {
+        document.getElementById('result').className = key
+        const button = document.getElementById('gen-button')
+        button.disabled = false
+        button.onclick = () => {
             const res = generator.generate(CACHE)
             document.getElementById('result').innerText = res
         }
 
-        btn.click()
+        button.click()
     } catch (err) {
         document.getElementById('result').innerText = 'Error loading data.'
         console.error(err)
