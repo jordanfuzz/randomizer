@@ -2,6 +2,7 @@ import { LISTS } from './lists.js'
 import generateVideoGameTitle from './generators/videogame.js'
 import generateOsrsCatName from './generators/cats.js'
 import generateMasonicTitle from './generators/masonic.js'
+import generateFloridaManHeadline from './generators/florida.js'
 
 const GENERATORS = {
     videogame: {
@@ -44,9 +45,26 @@ const GENERATORS = {
         generate: generateMasonicTitle,
     },
     floridaman: {
-        title: 'Florida Man Headline Generator',
-        files: [],
-        generate: (data) => {},
+        title: 'Florida Man Headline Generator (kinda broken)',
+        files: [
+            LISTS.generic.verb,
+            LISTS.generic.verbs,
+            LISTS.generic.verbed,
+            LISTS.generic.verbing,
+            LISTS.generic.noun,
+            LISTS.generic.nouns,
+            LISTS.generic.adjective,
+            LISTS.names.firstName,
+            LISTS.names.lastName,
+            LISTS.generic.allNoun,
+            LISTS.generic.preposition,
+            LISTS.florida.are,
+            LISTS.florida.verb,
+            LISTS.florida.endPhrase,
+            LISTS.florida.locationTime,
+            LISTS.generic.exclamation,
+        ],
+        generate: generateFloridaManHeadline,
     },
 }
 

@@ -15,6 +15,8 @@ const LISTS = {
     florida: {
         verb: '/data/florida/verb.json',
         endPhrase: '/data/florida/end-phrase.json',
+        are: '/data/florida/are.json',
+        locationTime: '/data/florida/location-time.json',
     },
     holiday: {
         spookyAdjective: '/data/holiday/spooky-adjective.json',
