@@ -1,0 +1,39 @@
+body {
+    font-family: sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.generator-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background: #f9f9f9;
+}
+
+.generator-card:hover {
+    background: #eee;
+}
+
+#output-area {
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid #333;
+    font-size: 2rem;
+    text-align: center;
+    display: none;
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.loading {
+    color: #666;
+    font-style: italic;
+}
