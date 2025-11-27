@@ -3,10 +3,13 @@ import generateVideoGameTitle from './generators/videogame.js'
 import generateOsrsCatName from './generators/cats.js'
 import generateMasonicTitle from './generators/masonic.js'
 import generateFloridaManHeadline from './generators/florida.js'
+import generateWordlabBandName from './generators/wordlab.js'
 
 const GENERATORS = {
     videogame: {
         title: 'Video Game Name Generator',
+        subtitle:
+            'Continuation of <a href="https://videogamena.me" target="_blank">VGNG</a>',
         files: [LISTS.special.videogames],
         generate: generateVideoGameTitle,
     },
@@ -45,7 +48,8 @@ const GENERATORS = {
         generate: generateMasonicTitle,
     },
     floridaman: {
-        title: 'Florida Man Headline Generator (kinda broken)',
+        title: 'Florida Man Headline Generator',
+        subtitle: '(currently kind of broken)',
         files: [
             LISTS.generic.verb,
             LISTS.generic.verbs,
@@ -65,6 +69,13 @@ const GENERATORS = {
             LISTS.generic.exclamation,
         ],
         generate: generateFloridaManHeadline,
+    },
+    wordlab: {
+        title: 'Wordlab Band Name Generator',
+        subtitle:
+            'Continuation of the <a href="https://www.wordlab.com/archives/rock-band-names-list/" target="_blank">Wordlab Band Name Generator</a>',
+        files: [LISTS.special.wordlabBands],
+        generate: generateWordlabBandName,
     },
 }
 
@@ -126,8 +137,20 @@ function renderMenu() {
 async function loadGenerator(key) {
     const app = document.getElementById('app')
     const generator = GENERATORS[key]
+    const subtitleHTML = generator.subtitle
+        ? `<p class="subtitle">${generator.subtitle}</p>`
+        : ''
 
-    app.innerHTML = `<h2>${generator.title}</h2><div id="result">Loading...</div><div class="button-label">Press 'Enter' to generate</div><div class="buttons"><button id="gen-button" disabled>Generate</button> <button id="back-button">Back</button></div>`
+    app.innerHTML = `
+        <h2>${generator.title}</h2>
+        ${subtitleHTML}
+        <div id="result">Loading...</div>
+        <div class="button-label">Press 'Enter' to generate</div>
+        <div class="buttons">
+            <button id="back-button">Back</button>
+            <button id="gen-button" disabled>Generate</button>
+        </div>
+    `
 
     document.getElementById('back-button').onclick = navigateHome
 

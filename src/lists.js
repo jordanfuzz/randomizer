@@ -40,6 +40,7 @@ const LISTS = {
         catNames: '/data/special/cat-names.json',
         listOWords: '/data/special/list-o-words.json',
         videogames: '/data/special/videogames.txt',
+        wordlabBands: '/data/special/wordlab-bands.json',
     },
 }
 

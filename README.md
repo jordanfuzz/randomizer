@@ -5,6 +5,7 @@ A collection of random word and name generators:
 - Masonic title generator
 - Florida man headline generator
 - OSRS cat name generator
+- Band name generator - Based on [Wordlab Band Name Generator](https://www.wordlab.com/archives/rock-band-names-list/)
 
 A few others may move over from separate projects.
 
