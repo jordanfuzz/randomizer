@@ -7,14 +7,14 @@ import generateWordlabBandName from './generators/wordlab.js'
 
 const GENERATORS = {
     videogame: {
-        title: 'Video Game Name Generator',
+        title: 'Video Game Names',
         subtitle:
             'Continuation of <a href="https://videogamena.me" target="_blank">VGNG</a>',
         files: [LISTS.special.videogames],
         generate: generateVideoGameTitle,
     },
     cats: {
-        title: 'OSRS Cat Name Generator',
+        title: 'OSRS Cat Names',
         files: [
             LISTS.generic.adjective,
             LISTS.generic.noun,
@@ -32,7 +32,7 @@ const GENERATORS = {
         generate: generateOsrsCatName,
     },
     masonic: {
-        title: 'Masonic Title Generator',
+        title: 'Masonic Titles',
         files: [
             LISTS.masonic.adjective,
             LISTS.masonic.noun,
@@ -48,7 +48,7 @@ const GENERATORS = {
         generate: generateMasonicTitle,
     },
     floridaman: {
-        title: 'Florida Man Headline Generator',
+        title: 'Florida Man Headlines',
         subtitle: '(currently kind of broken)',
         files: [
             LISTS.generic.verb,
@@ -71,7 +71,7 @@ const GENERATORS = {
         generate: generateFloridaManHeadline,
     },
     wordlab: {
-        title: 'Wordlab Band Name Generator',
+        title: 'Wordlab Band Names',
         subtitle:
             'Continuation of the <a href="https://www.wordlab.com/archives/rock-band-names-list/" target="_blank">Wordlab Band Name Generator</a>',
         files: [LISTS.special.wordlabBands],
