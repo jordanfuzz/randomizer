@@ -19,7 +19,6 @@
     "left",
     "devoured",
     "abandoned",
-    "wandered",
     "ripped",
     "scoured",
     "conquered",
@@ -32,5 +31,6 @@
     "developed",
     "obtained",
     "****ed",
-    "ruined"
+    "ruined",
+    "slimed"
 ]

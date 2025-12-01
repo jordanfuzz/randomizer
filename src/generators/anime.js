@@ -14,18 +14,21 @@ const wordCombinations = [
     'My [person] has [adjective] [nouns]',
     'I [verbed] the [adjective] [noun]',
     'I think I [verbed] the [noun]',
-    'Oops, I [verbed] my [person]',
+    'I [verbed] my [person]',
     'Maybe I should [verb] your [person]',
     'The [noun] of my [person]',
     '[the] [noun] and [the] [noun]',
     'My [person] makes the best [nouns]',
+    'I [verbed] all of my [persons]',
 ]
 
 const prefixes = [
     'my [person] says ',
     'according to my [person], ',
     '[adjective] [noun]: ',
-    // 'the legend of [noun]: ',
+    'oops, ',
+    'in a previous life: ',
+    'dear [person], ',
 ]
 
 const suffixes = [
@@ -107,6 +110,8 @@ function replaceWords(wordCombination, data) {
             } else {
                 word = toPlural(pick(data[LISTS.anime.nounPhrase]))
             }
+        } else if (wordType === 'persons') {
+            word = toPlural(pick(data[LISTS.anime.person]))
         } else if (listByWordType[wordType]) {
             const filename = listByWordType[wordType]
             word = pick(data[filename])

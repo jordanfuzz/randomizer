@@ -19,12 +19,13 @@ export function toTitleCase(str) {
         'vs',
         'via',
         'with',
-        'over',
+        // 'over',
         'into',
         'onto',
         'off',
         'up',
         'ed',
+        's',
     ])
 
     const words = str.toLowerCase().split(/\s+/)
@@ -59,7 +60,7 @@ export function toTitleCase(str) {
 }
 
 export function toPlural(singular) {
-    const alreadyPlural = ['sheep', 'fish', 'deer', 'pokemon', 'wood']
+    const alreadyPlural = ['sheep', 'fish', 'deer', 'pokemon', 'wood', 'sis']
     if (alreadyPlural.includes(singular.toLowerCase())) {
         return singular
     }
