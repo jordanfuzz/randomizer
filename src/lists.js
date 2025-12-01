@@ -11,6 +11,7 @@ const LISTS = {
         verbed: '/data/generic/verbed.json',
         verbing: '/data/generic/verbing.json',
         verbs: '/data/generic/verbs.json',
+        the: '/data/generic/the.json',
     },
     florida: {
         verb: '/data/florida/verb.json',
@@ -41,6 +42,21 @@ const LISTS = {
         listOWords: '/data/special/list-o-words.json',
         videogames: '/data/special/videogames.txt',
         wordlabBands: '/data/special/wordlab-bands.json',
+    },
+    anime: {
+        noun: '/data/anime/noun.json',
+        nounPhrase: '/data/anime/noun-phrase.json',
+        person: '/data/anime/person.json',
+        adjective: '/data/anime/adjective.json',
+        verb: '/data/anime/verb.json',
+        verbed: '/data/anime/verbed.json',
+        companion: '/data/anime/companion.json',
+        location: '/data/anime/location.json',
+        occasion: '/data/anime/occasion.json',
+        purpose: '/data/anime/purpose.json',
+        qualifier: '/data/anime/qualifier.json',
+        personQualifier: '/data/anime/person-qualifier.json',
+        name: '/data/anime/name.json',
     },
 }
 

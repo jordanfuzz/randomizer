@@ -24,6 +24,7 @@ export function toTitleCase(str) {
         'onto',
         'off',
         'up',
+        'ed',
     ])
 
     const words = str.toLowerCase().split(/\s+/)
@@ -55,4 +56,24 @@ export function toTitleCase(str) {
             return lead + casedCore + trail
         })
         .join(' ')
+}
+
+export function toPlural(singular) {
+    const alreadyPlural = ['sheep', 'fish', 'deer', 'pokemon', 'wood']
+    if (alreadyPlural.includes(singular.toLowerCase())) {
+        return singular
+    }
+    if (singular.endsWith('y') && !/[aeiou]y$/.test(singular)) {
+        return singular.slice(0, -1) + 'ies'
+    } else if (
+        singular.endsWith('s') ||
+        singular.endsWith('x') ||
+        singular.endsWith('z') ||
+        singular.endsWith('ch') ||
+        singular.endsWith('sh')
+    ) {
+        return singular + 'es'
+    } else {
+        return singular + 's'
+    }
 }

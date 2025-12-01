@@ -4,6 +4,7 @@ import generateOsrsCatName from './generators/cats.js'
 import generateMasonicTitle from './generators/masonic.js'
 import generateFloridaManHeadline from './generators/florida.js'
 import generateWordlabBandName from './generators/wordlab.js'
+import generateAnimeTitle from './generators/anime.js'
 
 const GENERATORS = {
     videogame: {
@@ -76,6 +77,26 @@ const GENERATORS = {
             'Continuation of the <a href="https://www.wordlab.com/archives/rock-band-names-list/" target="_blank">Wordlab Band Name Generator</a>',
         files: [LISTS.special.wordlabBands],
         generate: generateWordlabBandName,
+    },
+    anime: {
+        title: 'Anime Title',
+        files: [
+            LISTS.anime.noun,
+            LISTS.anime.nounPhrase,
+            LISTS.anime.person,
+            LISTS.anime.adjective,
+            LISTS.anime.verb,
+            LISTS.anime.verbed,
+            LISTS.anime.companion,
+            LISTS.anime.location,
+            LISTS.anime.occasion,
+            LISTS.anime.purpose,
+            LISTS.anime.qualifier,
+            LISTS.anime.personQualifier,
+            LISTS.anime.name,
+            LISTS.generic.the,
+        ],
+        generate: generateAnimeTitle,
     },
 }
 
