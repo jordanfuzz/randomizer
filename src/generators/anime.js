@@ -20,6 +20,7 @@ const wordCombinations = [
     '[the] [noun] and [the] [noun]',
     'My [person] makes the best [nouns]',
     'I [verbed] all of my [persons]',
+    "My [nouns] aren't working",
 ]
 
 const prefixes = [
@@ -131,8 +132,8 @@ export default function generateAnimeTitle(data) {
     let wordCombination = pick(wordCombinations)
     const roll = Math.floor(Math.random() * 8)
     if (roll === 0) wordCombination = addOptionalPrefixes(wordCombination)
-    else if (roll === 1) wordCombination = addOptionalSuffixes(wordCombination)
-    else if (roll === 2) {
+    else if (roll <= 2) wordCombination = addOptionalSuffixes(wordCombination)
+    else if (roll === 3) {
         wordCombination = addOptionalSuffixes(
             addOptionalPrefixes(wordCombination)
         )

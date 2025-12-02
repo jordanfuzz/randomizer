@@ -80,6 +80,7 @@ const GENERATORS = {
     },
     anime: {
         title: 'Anime Title',
+        subtitle: 'Can sometimes be NSFW',
         files: [
             LISTS.anime.noun,
             LISTS.anime.nounPhrase,

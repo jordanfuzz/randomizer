@@ -23,7 +23,7 @@ export function toTitleCase(str) {
         'into',
         'onto',
         'off',
-        'up',
+        // 'up',
         'ed',
         's',
     ])
