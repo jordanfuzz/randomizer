@@ -34,7 +34,6 @@ const prefixes = [
 const suffixes = [
     ', or so I thought',
     ', or maybe I [verbed] it',
-    ' for real this time',
     ', if you believe in that sort of thing',
     ' [location]',
     ' [purpose]',
