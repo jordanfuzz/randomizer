@@ -21,6 +21,9 @@ const wordCombinations = [
     'My [person] makes the best [nouns]',
     'I [verbed] all of my [persons]',
     "My [nouns] aren't working",
+    "Don't make me [verb] your [nouns]",
+    'Looks like you [verbed] yourself',
+    'your [noun], my [noun]',
 ]
 
 const prefixes = [
@@ -30,6 +33,7 @@ const prefixes = [
     'oops, ',
     'in a previous life: ',
     'dear [person], ',
+    'honestly, ',
 ]
 
 const suffixes = [
@@ -80,7 +84,10 @@ function addOptionalPrefixes(sentence) {
 
 function addOptionalSuffixes(sentence) {
     if (sentence.endsWith('[person]')) {
-        return sentence + pick([...suffixes, ' [personQualifier]'])
+        return (
+            sentence +
+            pick([...suffixes, ' [personQualifier]', ' [personQualifier]'])
+        )
     }
     return sentence + pick(suffixes)
 }
