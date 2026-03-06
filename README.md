@@ -7,6 +7,7 @@ A collection of random word and name generators:
 - OSRS cat name generator
 - Band name generator - Based on [Wordlab Band Name Generator](https://www.wordlab.com/archives/rock-band-names-list/)
 - Anime Title Generator
+- Neopet Item Generator
 
 A few others may move over from separate projects.
 

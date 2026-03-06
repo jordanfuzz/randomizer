@@ -5,6 +5,7 @@ import generateMasonicTitle from './generators/masonic.js'
 import generateFloridaManHeadline from './generators/florida.js'
 import generateWordlabBandName from './generators/wordlab.js'
 import generateAnimeTitle from './generators/anime.js'
+import generateNeopetsItem from './generators/neopets.js'
 
 const GENERATORS = {
     videogame: {
@@ -99,6 +100,22 @@ const GENERATORS = {
         ],
         generate: generateAnimeTitle,
     },
+    neopets: {
+        title: 'Neopets Items',
+        files: [
+            LISTS.neopets.creature,
+            LISTS.neopets.bodyPart,
+            LISTS.neopets.food,
+            LISTS.neopets.foodModifier,
+            LISTS.neopets.material,
+            LISTS.neopets.clothing,
+            LISTS.neopets.item,
+            LISTS.neopets.adjective,
+            LISTS.neopets.place,
+            LISTS.neopets.concept,
+        ],
+        generate: generateNeopetsItem,
+    },
 }
 
 const CACHE = {}
@@ -188,7 +205,7 @@ async function loadGenerator(key) {
                         CACHE[file] = await res.json()
                     }
                 }
-            })
+            }),
         )
 
         document.getElementById('result').className = key
@@ -207,7 +224,6 @@ async function loadGenerator(key) {
 }
 
 function render404() {
-    document.getElementById(
-        'app'
-    ).innerHTML = `<h1>404</h1><p>Generator not found.</p><button onclick="navigateHome()">Go Home</button>`
+    document.getElementById('app').innerHTML =
+        `<h1>404</h1><p>Generator not found.</p><button onclick="navigateHome()">Go Home</button>`
 }

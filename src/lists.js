@@ -58,6 +58,18 @@ const LISTS = {
         personQualifier: '/data/anime/person-qualifier.json',
         name: '/data/anime/name.json',
     },
+    neopets: {
+        creature: '/data/neopets/creature.json',
+        bodyPart: '/data/neopets/body-part.json',
+        food: '/data/neopets/food.json',
+        foodModifier: '/data/neopets/food-modifier.json',
+        material: '/data/neopets/material.json',
+        clothing: '/data/neopets/clothing.json',
+        item: '/data/neopets/item.json',
+        adjective: '/data/neopets/adjective.json',
+        place: '/data/neopets/place.json',
+        concept: '/data/neopets/concept.json',
+    },
 }
 
 export { LISTS }
