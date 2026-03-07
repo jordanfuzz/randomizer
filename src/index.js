@@ -113,6 +113,7 @@ const GENERATORS = {
             LISTS.neopets.adjective,
             LISTS.neopets.place,
             LISTS.neopets.concept,
+            LISTS.neopets.bundle,
         ],
         generate: generateNeopetsItem,
     },

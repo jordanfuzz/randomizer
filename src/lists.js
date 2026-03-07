@@ -69,6 +69,7 @@ const LISTS = {
         adjective: '/data/neopets/adjective.json',
         place: '/data/neopets/place.json',
         concept: '/data/neopets/concept.json',
+        bundle: '/data/neopets/bundle.json',
     },
 }
 
