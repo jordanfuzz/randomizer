@@ -11,6 +11,7 @@ const wordCombinations = [
     '[noun] [verbing] the [noun]',
     '[adverb] [verbing]',
     '[verbing] while [verbing]',
+    "[verbing] on the [position]'s [noun]",
 ]
 
 const listByWordType = {
