@@ -58,6 +58,13 @@ const LISTS = {
         personQualifier: '/data/anime/person-qualifier.json',
         name: '/data/anime/name.json',
     },
+    hockey: {
+        noun: '/data/hockey/noun.json',
+        verbing: '/data/hockey/verbing.json',
+        location: '/data/hockey/location.json',
+        adverb: '/data/hockey/adverb.json',
+        position: '/data/hockey/position.json',
+    },
     neopets: {
         creature: '/data/neopets/creature.json',
         bodyPart: '/data/neopets/body-part.json',

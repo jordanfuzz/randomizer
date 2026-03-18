@@ -6,6 +6,7 @@ import generateFloridaManHeadline from './generators/florida.js'
 import generateWordlabBandName from './generators/wordlab.js'
 import generateAnimeTitle from './generators/anime.js'
 import generateNeopetsItem from './generators/neopets.js'
+import generateHockeyPenalty from './generators/hockey.js'
 
 const GENERATORS = {
     videogame: {
@@ -100,6 +101,17 @@ const GENERATORS = {
             LISTS.generic.preposition,
         ],
         generate: generateAnimeTitle,
+    },
+    hockey: {
+        title: 'Hockey Penalties',
+        files: [
+            LISTS.hockey.noun,
+            LISTS.hockey.verbing,
+            LISTS.hockey.location,
+            LISTS.hockey.adverb,
+            LISTS.hockey.position,
+        ],
+        generate: generateHockeyPenalty,
     },
     neopets: {
         title: 'Neopets Items',

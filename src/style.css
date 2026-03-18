@@ -125,6 +125,10 @@ button:hover {
     font-size: 2.5rem;
 }
 
+.hockey {
+    font-size: 2.5rem;
+}
+
 #result {
     flex: 1;
     display: flex;
