@@ -24,6 +24,8 @@ const wordCombinations = [
     "Don't make me [verb] your [nouns]",
     'Looks like you [verbed] yourself',
     'your [noun], my [noun]',
+    // 'I am going to [intransitiveVerb] [preposition] your [person]', TODO: Add intransitive verbs
+    // 'That time I [intransitiveVerbed] [preposition] [the] [noun]',
 ]
 
 const prefixes = [
@@ -34,6 +36,7 @@ const prefixes = [
     'in a previous life: ',
     'dear [person], ',
     'honestly, ',
+    '[adjective] confession: ',
 ]
 
 const suffixes = [
@@ -72,6 +75,7 @@ const listByWordType = {
     personQualifier: LISTS.anime.personQualifier,
     name: LISTS.anime.name,
     the: LISTS.generic.the,
+    preposition: LISTS.generic.preposition,
 }
 
 function pick(list) {

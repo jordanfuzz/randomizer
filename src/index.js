@@ -97,6 +97,7 @@ const GENERATORS = {
             LISTS.anime.personQualifier,
             LISTS.anime.name,
             LISTS.generic.the,
+            LISTS.generic.preposition,
         ],
         generate: generateAnimeTitle,
     },
